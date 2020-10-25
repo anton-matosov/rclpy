@@ -59,7 +59,7 @@ function(configure_python_c_extension_library _library_name)
   endif()
 
   target_link_libraries(${_library_name}
-    ${PythonExtra_LIBRARIES}
+    ${PythonExtra_EXTENSION_LIBRARIES}
   )
 
   ament_target_dependencies(${_library_name}
@@ -75,7 +75,7 @@ add_library(rclpy_common
   SHARED src/rclpy_common/src/common.c
 )
 target_link_libraries(rclpy_common
-  ${PythonExtra_LIBRARIES}
+  ${PythonExtra_EXTENSION_LIBRARIES}
 )
 target_include_directories(rclpy_common
   PUBLIC
